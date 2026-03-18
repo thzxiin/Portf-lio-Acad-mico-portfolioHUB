@@ -1,0 +1,36 @@
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+carros = [
+    {
+        "id": 1,
+        "modelo": "BMW X6 M Competition",
+        "ano": 2025,
+        "preco": 950000
+    },
+    {
+        "id": 2,
+        "modelo": "Porsche Macan",
+        "ano": 2024,
+        "preco": 620000
+    }
+]
+
+@app.route("/")
+def home():
+    return "API de Carros Premium 🚗"
+
+@app.route("/carros", methods=["GET"])
+def listar_carros():
+    return jsonify(carros)
+
+@app.route("/carros/<int:id>", methods=["GET"])
+def buscar_carro(id):
+    for carro in carros:
+        if carro["id"] == id:
+            return jsonify(carro)
+    return jsonify({"erro": "Carro não encontrado"}), 404
+
+if __name__ == "__main__":
+    app.run(debug=True)
