@@ -1,0 +1,11 @@
+# 🚗 Car API
+
+API simples de carros premium usando Flask.
+
+## Rotas
+- /carros
+- /carros/{id}
+
+## Tecnologias
+- Python
+- Flask
