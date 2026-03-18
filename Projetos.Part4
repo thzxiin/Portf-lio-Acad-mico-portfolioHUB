@@ -1,0 +1,26 @@
+def gerar_ficha():
+    modelo = input("Modelo: ")
+    ano = input("Ano: ")
+    km = input("KM: ")
+    cor = input("Cor: ")
+
+    ficha = f"""
+🚗 FICHA TÉCNICA
+
+Modelo: {modelo}
+Ano: {ano}
+Quilometragem: {km}
+Cor: {cor}
+
+🔥 Destaques:
+- Veículo revisado
+- Excelente estado
+- Pronto para uso
+
+📲 Consulte condições
+"""
+
+    print(ficha)
+
+if __name__ == "__main__":
+    gerar_ficha()
