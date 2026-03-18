@@ -1,0 +1,36 @@
+usuarios = {}
+
+def cadastrar():
+    usuario = input("Novo usuário: ")
+    senha = input("Senha: ")
+
+    usuarios[usuario] = senha
+    print("✅ Usuário cadastrado!\n")
+
+def login():
+    usuario = input("Usuário: ")
+    senha = input("Senha: ")
+
+    if usuario in usuarios and usuarios[usuario] == senha:
+        print("🔓 Login realizado com sucesso!\n")
+    else:
+        print("❌ Usuário ou senha inválidos\n")
+
+def menu():
+    while True:
+        print("1 - Cadastrar")
+        print("2 - Login")
+        print("3 - Sair")
+
+        opcao = input("Escolha: ")
+
+        if opcao == "1":
+            cadastrar()
+        elif opcao == "2":
+            login()
+        elif opcao == "3":
+            break
+        else:
+            print("Opção inválida\n")
+
+menu()
